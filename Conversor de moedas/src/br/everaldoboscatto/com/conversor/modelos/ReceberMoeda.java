@@ -1,4 +1,5 @@
 package br.everaldoboscatto.com.conversor.modelos;
 
-public class ReceberMoeda {
+public record ReceberMoeda(
+        String conversion_result) {
 }
