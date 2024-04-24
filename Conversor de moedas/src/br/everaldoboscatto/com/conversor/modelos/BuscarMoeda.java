@@ -14,19 +14,22 @@ public class BuscarMoeda {
         var urlApi = "https://v6.exchangerate-api.com/v6/" +
                 apiKey + "/pair/" + moedaOrigem + "/" + moedaDestino + "/" + valor;
 
+        // Lançar, capturar e tratar exceções
         try {
             HttpClient client = HttpClient
-                    .newHttpClient();
+                    .newHttpClient(); // Fazer requisições
             HttpRequest request = HttpRequest
-                    .newBuilder(URI.create(urlApi)).build();
+                    .newBuilder(URI.create(urlApi)).build(); // Configurar requisições
             HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+                    .send(request, HttpResponse.BodyHandlers.ofString()); // Obter resposta das requisições
+            // Desserializar String json
             Gson gson = new Gson();
             String json = response.body();
             ReceberMoeda moedaConvertida = gson
                     .fromJson(json, ReceberMoeda.class);
             Moeda moeda = new Moeda(moedaConvertida);
-            System.out.println(moeda);
+            System.out.println("Valor: "+ valor + " ["+ moedaOrigem +"] " + "corresponde ao valor final de =>>> "
+                    + moeda +  " ["+ moedaDestino +"]");
         } catch (InterruptedException | IOException e) {
             throw new RuntimeException(e);
         }

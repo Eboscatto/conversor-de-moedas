@@ -9,49 +9,52 @@ public class Main {
         // Instanciar a classe
         BuscarMoeda buscarMoeda = new BuscarMoeda();
 
-        // Variaveis dos códigos ISO das moedas
-        String COP = "COP"; // Peso colombiano
-        String USD = "USD"; // Dólar americano
-        String BRL = "BRL"; // Real braileiro
-        String ARS = "ARS"; // Peso argentino
+        // Declarar variaveis dos códigos ISO das moedas
+        var cop = "COP"; // Peso colombiano
+        var usd = "USD"; // Dólar americano
+        var brl = "BRL"; // Real brasileiro
+        var ars = "ARS"; // Peso argentino
+        var eur = "EUR";  // Euro
 
         // Inicializar variável
         int opcao = 0;
 
-        // Loop
-        while(opcao != 7) {
+        // Loop menu de opções
+        while(opcao != 9) {
 
             System.out.print("""     
                 
                  --------------------------------------------------
                  |       BEM VINDO AO CONVERSOR DE MOEDAS         |
                  --------------------------------------------------
-                              M E N U 
+                 |                     M E N U                    |
                  --------------------------------------------------
                   1) Dólar =>> Peso argentino
                   2) Peso argentino =>> Dólar
                   3) Dólar =>> Real brasileiro
                   4) Real brasileiro =>> Dólar
                   5) Dólar =>> Peso colombiano
-                  6) Peso colombiano =>> Dólar
-                  7) Sarir
+                  6) Peso colombiano =>> Dólar 
+                  7) Real brasileiro =>> Euro
+                  8) Euro =>> Real brasileiro
+                  9) Sarir
                   --------------------------------------------------
-                     Escolha uma opção válida:
+                  |  Escolha uma opção válida.                     |
                   --------------------------------------------------                               
                 """);
             System.out.print("Opção: ");
             opcao = leitura.nextInt();
 
-            // Validar opção
-            if(opcao == 7) {
+            // Validar opção de saída
+            if(opcao == 9) {
                 System.out.print("""
                         Espero ter atendido todos os requisitos.
                         Obrigado por escolher meu conversor de moedas.""");
                 break;
             }
 
-            // Validar opção
-            if (opcao < 1 || opcao > 7) {
+            // Validar intervalo de opçoes
+            if (opcao < 1 || opcao > 9) {
                 System.out.println("Opção inválida, deve digitar uma opção válida.");
             }
 
@@ -60,32 +63,42 @@ public class Main {
                 case 1:
                     System.out.print("Digite o valor a ser convertido: ");
                     double dolarConvertidoEmPesoArgentino = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(USD, ARS, dolarConvertidoEmPesoArgentino);
+                    buscarMoeda.converterMoedas(usd, ars, dolarConvertidoEmPesoArgentino);
                     break;
                 case 2:
                     System.out.print("Digite o valor a ser convertido: ");
                     double pesoArgentinoConvertidoEmDolar = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(ARS, USD , pesoArgentinoConvertidoEmDolar);
+                    buscarMoeda.converterMoedas(ars, usd, pesoArgentinoConvertidoEmDolar);
                     break;
                 case 3:
                     System.out.print("Digite o valor a ser convertido: ");
                     double dolarConvertidoEmReal = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(USD, BRL , dolarConvertidoEmReal);
+                    buscarMoeda.converterMoedas(usd, brl, dolarConvertidoEmReal);
                     break;
                 case 4:
                     System.out.print("Digite o valor a ser convertido: ");
                     double realConvertidoEmDolar = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(BRL, USD , realConvertidoEmDolar);
+                    buscarMoeda.converterMoedas(brl, usd, realConvertidoEmDolar);
                     break;
                 case 5:
                     System.out.print("Digite o valor a ser convertido: ");
                     double dolarConvertidoEmPesoColombiano = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(USD, COP , dolarConvertidoEmPesoColombiano);
+                    buscarMoeda.converterMoedas(usd, cop, dolarConvertidoEmPesoColombiano);
                     break;
                 case 6:
                     System.out.print("Digite o valor a ser convertido: ");
                     double pesoColombianoConvertidoEmDolar = leitura.nextDouble();
-                    buscarMoeda.converterMoedas(COP, USD , pesoColombianoConvertidoEmDolar);
+                    buscarMoeda.converterMoedas(cop, usd, pesoColombianoConvertidoEmDolar);
+                    break;
+                case 7:
+                    System.out.print("Digite o valor a ser convertido: ");
+                    double realConvertidoEmEuro = leitura.nextDouble();
+                    buscarMoeda.converterMoedas(brl, eur, realConvertidoEmEuro);
+                    break;
+                case 8:
+                    System.out.print("Digite o valor a ser convertido: ");
+                    double euroConvertidoEmReal = leitura.nextDouble();
+                    buscarMoeda.converterMoedas(eur, brl, euroConvertidoEmReal);
                     break;
                 default:
                     System.out.println("Tente novamente!");
