@@ -1,7 +1,7 @@
 ### Projeto:
-O Conversor de moedas é um desafio de final de curso de Java e Orientação a Objetos, proposto no Programa ONE (Oracle Next Education), em parceria com Alura, com o objetivo de testar e compartilhar os conhecimentos adquiridos pelo estudante, através das trilhas de aprendizagem ofertadas pelo programa.
+É um projeto desafio final do curso de Java e Orientação a Objetos, proposto no Programa ONE (Oracle Next Education), em parceria com Alura, com o objetivo de testar e compartilhar os conhecimentos adquiridos pelo estudante, através das trilhas de aprendizagem ofertadas pelo programa.
 ### Descrição:
-O projeto é um conversor de moedas, onde através de um menu de interação, o usuário informa de qual e para qual moeda deseja fazer a conversão, através da API Exchangerate o programa busca a cotação das moedas em tempo real, realiza a desserialização dos dados recebidos e devolve os valores ao usuário .  
+O projeto é um Conversor de Moedas, onde através de um menu de interação, o usuário informa de qual e para qual moeda deseja fazer a conversão,então o sistema faz requisições em tempo real à API Exchangerate que é uma API de taxas de câmbio, então recebe os dados da cotação no formato jeson, faz a desserialização desses dados e devolve os valores ao usuário .  
 ### Tecnologias Utilizadas:
 Esse projeto foi criado utilizando as seguintes tecnologias:
 ### Sistema Operacional:
