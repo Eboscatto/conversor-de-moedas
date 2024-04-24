@@ -14,7 +14,7 @@ public class BuscarMoeda {
         var urlApi = "https://v6.exchangerate-api.com/v6/" +
                 apiKey + "/pair/" + moedaOrigem + "/" + moedaDestino + "/" + valor;
 
-        // Lançar, capturar e tratar exceções
+        // Lançar exceções
         try {
             HttpClient client = HttpClient
                     .newHttpClient(); // Fazer requisições
