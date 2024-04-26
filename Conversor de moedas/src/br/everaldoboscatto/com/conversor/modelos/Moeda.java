@@ -1,5 +1,7 @@
 package br.everaldoboscatto.com.conversor.modelos;
 
+import com.google.gson.internal.bind.util.ISO8601Utils;
+
 public class Moeda {
     private String moedaOrigem;
     private  String moedaAlvo;
@@ -39,6 +41,6 @@ public class Moeda {
 
     @Override
     public String toString() {
-        return  conversao;
+        return " [" + moedaOrigem + "]" + " corresponde ao valor final de =>> " + conversao + " [" + moedaAlvo + "]";
     }
 }

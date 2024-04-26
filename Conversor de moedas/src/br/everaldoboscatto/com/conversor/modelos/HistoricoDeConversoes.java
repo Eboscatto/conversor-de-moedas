@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistoricoDeConversoes {
-
-    public void salvarJson(Moeda moedaConvertida) throws IOException {
+    public void salvarJson(Moeda moeda) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter writer = new FileWriter(moedaConvertida.getValorCotacao() + "Historico.json");
-        writer.write(gson.toJson(moedaConvertida));
+        FileWriter writer = new FileWriter( "Historico.json");
+        writer.write(gson.toJson(moeda));
         writer.close();
     }
 }
